@@ -1,0 +1,455 @@
+/* FUENTES */
+
+/* Se define una fuente personalizada llamada "nevis". */
+@font-face {
+  font-family: "nevis";
+  src: url("fonts/nevis.eot");
+  src: url("fonts/nevis.eot?#iefix") format("embedded-opentype"),
+    url("fonts/nevis.woff") format("woff"),
+    url("fonts/nevis.ttf") format("truetype"),
+    url("fonts/nevis.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "fajala";
+  src: url("fonts/FjallaOne-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "icons";
+  src: url("fonts/websymbols-regular-webfont.svg#webSymbolsRegular")
+      format("svg"),
+    url("fonts/websymbols-regular-webfont.eot");
+  src: url("fonts/websymbols-regular-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("fonts/websymbols-regular-webfont.woff") format("woff"),
+    url("fonts/websymbols-regular-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ESTILOS GENERALES */
+
+/* Se quitan los márgenes y los rellenos predeterminados de todos los elementos. */
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+/* Se establece una imagen de fondo para el cuerpo del sitio web. */
+body {
+  background-image: url(../img/paven.png);
+}
+
+a {
+  color: rgb(0, 95, 0);
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(0, 95, 0);
+}
+
+a:hover {
+  color: rgb(6, 66, 6);
+}
+
+.red {
+  color: rgb(124, 0, 0) !important;
+}
+
+.blue {
+  color: rgb(0, 0, 110) !important;
+}
+
+.orange {
+  color: rgb(255, 166, 0);
+}
+
+.icon {
+  font-family: "icons";
+  float: left;
+  margin-right: 1px;
+}
+
+.clearfix {
+  float: none;
+  clear: both;
+}
+/*FORMULARIOs*/
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+  border: 1px solid rgba(216, 216, 216, 0.709);
+  box-shadow: 0px 0px 2px whitesmoke inset;
+  background: white;
+  padding: 1px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  color: gray;
+  transition: all 300ms;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+select:focus {
+  border: 1px solid rgb(97, 161, 1);
+  color: black;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button {
+  display: block;
+  border-radius: 2px;
+  border: 1px solid green;
+  width: 60px;
+  padding: 3px;
+  color: white;
+  background-color: rgb(97, 161, 1);
+  cursor: pointer;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button {
+  box-shadow: 0px 0px 2px gray;
+}
+
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+button {
+  box-shadow: 0px 0px 4px gray inset;
+  text-shadow: 0px 0px 1px whitesmoke;
+}
+
+/* CABECERA */
+
+/* Se define el contenedor de la cabecera con un ancho mínimo de 1024px y un ancho del 100%.
+     También se establece una altura de 250px y se centra horizontalmente con un margen de 0px. */
+#header {
+  min-width: 1024px;
+  width: 100%;
+  height: 250px;
+  margin: 0px auto;
+}
+
+/* Se quita la decoración de enlace de todos los elementos dentro de la cabecera. */
+#header a {
+  text-decoration: none;
+}
+
+/* Se establecen estilos para el logotipo dentro de la cabecera, 
+     definiendo un ancho de 770px, centrándolo horizontalmente con un margen de 0px y un relleno superior de 20px. */
+#header #logotipo {
+  width: 770px;
+  margin: 0px auto;
+  padding-top: 20px;
+}
+
+/* Se establecen estilos para la imagen del logotipo dentro del contenedor de logotipo.
+     La imagen se muestra como un bloque, centrada horizontalmente con un margen de 0px y un ancho de 140px. */
+#header #logotipo img {
+  display: block;
+  text-align: center;
+  margin: 0px auto;
+  width: 140px;
+}
+
+/* Se establecen estilos para el título principal (h1) dentro de la cabecera.
+     Se centra el texto horizontalmente, se establece un tamaño de fuente de 40px,
+     se utiliza la fuente personalizada "nevis", se agrega un espaciado entre letras de 4px,
+     se establece un margen superior de 10px y se aplica una sombra de texto.
+     También se agrega una transición de 300ms para suavizar el cambio de sombra en el efecto de desplazamiento. */
+#header h1 {
+  text-align: center;
+  font-size: 40px;
+  font-family: "nevis";
+  letter-spacing: 4px;
+  margin-top: 10px;
+  text-shadow: 0px 2px 1px rgb(62, 62, 62);
+  transition: all 300ms;
+}
+
+/* Al pasar el cursor sobre el título principal, se cambia el sombreado del texto
+     para dar un efecto de resaltado. */
+#header h1:hover {
+  text-shadow: 0px 2px 1px rgb(62, 62, 62), 0px 0px 4px rgb(97, 161, 1);
+}
+
+/* Se establece el color del enlace dentro del título principal. */
+#header h1 a {
+  color: rgb(97, 161, 1);
+}
+
+/* BARRA DE NAVEGACIÓN */
+
+/* Se establecen estilos para la barra de navegación.
+     Se establece un ancho del 100%, un color de fondo gris oscuro, color de texto blanco,
+     una altura de 40px, se utiliza la fuente sans-serif/helvetica/arial con un tamaño de fuente de 14px,
+     y se agrega una sombra alrededor de la barra. */
+#nav {
+  width: 100%;
+  background-color: rgb(68, 68, 68);
+  color: white;
+  height: 40px;
+  font-family: sans-serif, helvetica, arial;
+  font-size: 14px;
+  box-shadow: 0px 0px 2px gray;
+}
+
+/* Se establecen estilos para la lista no ordenada dentro de la barra de navegación.
+     Se quitan los estilos predeterminados de las listas y el subrayado de los enlaces. */
+#nav ul {
+  list-style: none;
+  text-decoration: none;
+  margin: 0px auto;
+  width: 1080px;
+}
+
+/* Se establecen estilos para cada elemento de la lista dentro de la barra de navegación.
+     Los elementos se alinean a la izquierda, se agrega una línea vertical en la derecha,
+     y se agrega una transición para suavizar los cambios en el efecto de desplazamiento. */
+#nav > ul > li {
+  line-height: 40px;
+  float: left;
+  border-right: 1px solid gray;
+  transition: all 300ms;
+}
+
+/* Se establecen estilos para los enlaces dentro de los elementos de la lista de la barra de navegación.
+   Los enlaces se muestran como bloques, con relleno en el lado izquierdo y derecho,
+   y se agrega una línea vertical en el lado izquierdo del primer enlace. */
+#nav > ul > li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Se agrega una línea vertical en el lado izquierdo del primer enlace de cada fila. */
+#nav > ul > li > a:first-child {
+  border-left: 1px solid gray;
+}
+
+/* Al pasar el cursor sobre los elementos de la lista de la barra de navegación,
+     se cambia el color de fondo y se agrega una sombra interior para dar un efecto de resaltado. */
+#nav > ul > li:hover {
+  background-color: rgb(97, 161, 1);
+  box-shadow: 0px 0px 4px green inset;
+}
+
+/* MENU DESPLEGABLE */
+
+/* Se oculta el submenú por defecto. */
+#nav > ul > li > ul {
+  display: none;
+  position: absolute;
+  width: 160px;
+  box-shadow: 0px 2px 2px gray;
+  z-index: 1;
+}
+
+/* Al pasar el cursor sobre un elemento de la lista de la barra de navegación,
+     se muestra el submenú correspondiente. */
+#nav > ul > li:hover > ul {
+  display: block;
+}
+
+/* Se establecen estilos para los elementos de la lista dentro del submenú.
+     Se agrega un fondo de color blanco ahumado, una línea en la parte inferior y un espaciado y tamaño de fuente. */
+#nav > ul > li:hover > ul > li {
+  background-color: whitesmoke;
+  border-bottom: 1px solid rgb(101, 101, 101);
+  padding: 8px;
+  line-height: 25px;
+  font-size: 13px;
+  transition: all 300ms;
+}
+
+/* Se establecen estilos para los enlaces dentro de los elementos de la lista del submenú.
+     Se cambia el color del texto. */
+#nav > ul > li:hover > ul > li a {
+  color: rgb(62, 62, 62);
+}
+
+/* Al pasar el cursor sobre los elementos del submenú,
+     se agrega una sombra interior para dar un efecto de resaltado. */
+#nav > ul > li:hover > ul > li:hover {
+  box-shadow: 0px 0px 6px rgb(188, 188, 188) inset;
+}
+
+/*CONTENIDO*/
+
+#content {
+  width: 1100px;
+  min-height: 1100px;
+  margin: 0px auto;
+}
+
+/*BARRA LATERAL*/
+
+#aside,
+#frase {
+  width: 200px;
+  float: left;
+  margin: 30px;
+  background-color: white;
+  border: 1px solid rgb(225, 225, 225);
+  box-shadow: 0px 2px 2px rgb(225, 225, 225);
+  font-family: sans-serif, arial, helvetica;
+}
+
+#frase {
+  padding: 8px;
+  font-size: 14px;
+  font-family: sans-serif;
+  width: 180px;
+}
+
+#aside .widget {
+  display: block;
+  width: 180px;
+  margin: 5px auto;
+  padding: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 14px;
+  border-bottom: 1px dashed rgb(97, 97, 97);
+}
+
+#aside .widget:last-child {
+  margin-bottom: 20px;
+}
+
+#aside h3 {
+  display: block;
+  width: 100%;
+  color: rgb(71, 71, 71);
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: rgba(239, 239, 239, 0.747);
+  border: 1px solid whitesmoke;
+  border-left: none;
+  border-right: none;
+  margin-bottom: 15px;
+}
+
+#aside li {
+  margin-top: 8px;
+  margin-bottom: 5px;
+  margin-left: 20px;
+  list-style: square;
+}
+
+/* FORMULARIOS BARRA LATERAL */
+#aside div label,
+#aside div input[type="text"],
+#aside div input[type="email"],
+#aside div input[type="password"],
+#aside div a {
+  display: block;
+  width: 95%;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+#aside div input[type="button"],
+#aside div input[type="submit"],
+#aside div button {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+#aside input,
+#aside label {
+  margin: 0px auto;
+  text-align: center;
+}
+/* secciones */
+
+#sections {
+  float: right;
+  width: 73%;
+  font-family: sans-serif, arial, helvetica;
+  margin-right: 20px;
+}
+
+#sections .titulo {
+  font-family: "fajala";
+  font-size: 24px;
+  font-weight: normal;
+  margin-top: -20px;
+  letter-spacing: 1px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid whitesmoke;
+}
+
+#sections section {
+  margin-top: 40px;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid whitesmoke;
+  box-shadow: 0px 0px 4px rgb(217, 217, 217);
+  color: rgb(71, 71, 71);
+  font-size: 16px;
+  overflow: hidden;
+}
+
+#sections .article {
+  margin: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#sections .date {
+  color: rgb(157, 157, 157);
+  font-size: 14px;
+}
+
+#sections .stickerOne,
+#sections .stickerTwo {
+  position: absolute;
+  margin-top: -38px;
+  z-index: 0;
+}
+
+#sections .stickerTwo {
+  margin-left: 58%;
+}
+
+#history {
+  float: right;
+  margin-top: 20px;
+  font-family: sans-serif, arial, helvetica;
+  margin-right: 20px;
+}
+
+/* PIE DE PÁGINA */
+
+#footer {
+  width: 100%;
+  margin: 0px auto;
+  text-align: center;
+  margin-top: 40px;
+  background-color: rgb(43, 43, 43);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  font-family: sans-serif;
+  font-size: 14px;
+  box-shadow: 0px 0px 2px gray;
+}
